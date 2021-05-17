@@ -68,20 +68,14 @@ if (mysqli_num_rows($fire) > 0) {
 <!-- Sign up Form -->
 <div class="col-lg-6 px-5">
 <h3>Sign Up</h3>
+<hr>
 <?php
-if (isset($_POST['submit'])) {
-    $_POST['submit'] = false;
-    if ($submit) {?>
-        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Successfully!</strong>Submit the data into Database</a>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-        </button>
-    </div><?php
-}
+if (isset($_GET['msg'])) {
+
+    echo '<div class="alert alert-primary" role="alert">' .
+        $_GET['msg'] . '</div>';
 }
 ?>
-<hr>
 <form name="signup" id="signup" action="Config/action.php" method="POST">
     <div class="form-group">
         <label for="fullname">Full Name</label>
